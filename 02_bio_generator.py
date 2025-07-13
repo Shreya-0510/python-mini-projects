@@ -26,3 +26,11 @@ print("\nYour stylish bio:\n")
 print("*" * 80)
 print(textwrap.dedent(bio))
 print("*" * 80)
+
+save = input("Do you want to save this bio to a text file? (y/n): ").lower()
+
+if save == "y":
+    filename = f"{name.lower().replace(" ", "_")}_bio.txt"
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(bio)
+    print("Files saved")
